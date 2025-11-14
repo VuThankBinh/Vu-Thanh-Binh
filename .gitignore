@@ -1,0 +1,4 @@
+node_modules/
+src/problem5/resources.db*
+dist/
+

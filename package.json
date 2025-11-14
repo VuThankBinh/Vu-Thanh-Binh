@@ -1,0 +1,28 @@
+{
+  "name": "code-challenge",
+  "version": "1.0.0",
+  "description": "Note that if you fork this repository, your responses may be publicly linked to this repo.  \r Please submit your application along with the solutions attached or linked.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/problem4/index.ts",
+    "problem5": "ts-node src/problem5/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.1",
+    "better-sqlite3": "^12.4.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/cors": "^2.8.19"
+  }
+}
