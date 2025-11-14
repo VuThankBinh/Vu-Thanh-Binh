@@ -13,6 +13,44 @@ We're cool as long as we can view your solution without any pain.
 BackEnd
 link test: https://s5tech.notion.site/Code-Challenge-05cdb9e0d1ce432a843f763b5d5f7497
 
+## Problem 4 – Sum to n
+
+### Mô tả
+Thư mục `src/problem4/index.ts` triển khai 3 biến thể của bài toán tính tổng `1 + … + n`:
+
+- `sum_to_n_a`: dùng công thức Gauss `n(n+1)/2`.
+- `sum_to_n_b`: duyệt tuyến tính và cộng dồn.
+- `sum_to_n_c`: sinh mảng ảo với `Array.from` rồi `reduce`.  
+Tất cả hàm đều:
+1. Kiểm tra `n` phải là số nguyên (`Number.isInteger`), sai sẽ ném `TypeError`.
+2. Trả `0` nếu `n <= 0` để tránh giá trị âm/không.
+
+### Cách chạy thử
+
+```bash
+npm install        # nếu chưa cài phụ thuộc
+npm run dev        # chạy script ts-node cho problem4
+```
+
+Script sẽ thực thi file `index.ts`; bạn có thể thêm khối `if (require.main === module)` để in mẫu:
+
+```
+if (require.main === module) {
+  console.log('sum_to_n_a(10) =', sum_to_n_a(10));
+  console.log('sum_to_n_b(10) =', sum_to_n_b(10));
+  console.log('sum_to_n_c(10) =', sum_to_n_c(10));
+}
+```
+
+### Kiểm thử nhanh
+- Sử dụng `npx ts-node` hoặc Node REPL: `npx ts-node --transpile-only`, sau đó `import { sum_to_n_a } from './src/problem4/index'; sum_to_n_a(100);`.
+- Có thể viết unit test bằng bất kỳ framework (Jest/Vitest). Trường hợp chưa có, đề xuất tạo file `src/problem4/index.test.ts` để đảm bảo đồng nhất giữa 3 phiên bản.
+
+### Gợi ý cải tiến
+1. Tách phần validate số nguyên thành helper dùng chung.
+2. Thêm cache hoặc memoization nếu lời gọi lặp lại nhiều lần (dù đa số không cần vì thời gian nhỏ).
+3. Viết benchmark nhỏ để so sánh hiệu năng giữa 3 giải pháp với các giá trị lớn.
+
 ## Problem 5 – A Crude Server
 
 ### Yêu cầu hệ thống
